@@ -4,7 +4,12 @@
 	"description": "Icon pack for Ecosphere Design System",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "node test.js",
+		"export": "figma-export use-config figma.config.js",
+		"pack": "npm pack",
+		"clean": "rimraf outline solid package *.tgz",
+		"build": "run-s clean export",
+		"np": "np"
 	},
 	"repository": {
 		"type": "git",
@@ -13,12 +18,26 @@
 	"keywords": [
 		"icons",
 		"ecosphere",
-		"design"
+		"design",
+		"svg"
 	],
 	"author": "Dipanjan De",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/bacon-delight/ecosphere-icons/issues"
 	},
-	"homepage": "https://github.com/bacon-delight/ecosphere-icons#readme"
+	"homepage": "https://github.com/bacon-delight/ecosphere-icons#readme",
+	"devDependencies": {
+		"@figma-export/cli": "^4.5.0",
+		"@figma-export/output-components-as-svg": "^4.5.0",
+		"@figma-export/transform-svg-with-svgo": "^4.5.0",
+		"cheerio": "^1.0.0-rc.12",
+		"dotenv": "^16.0.3",
+		"np": "^7.6.2",
+		"rimraf": "^3.0.2"
+	},
+	"files": [
+		"outline/",
+		"solid/"
+	]
 }
