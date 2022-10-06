@@ -7,22 +7,61 @@ const outputters = [
 ];
 
 /** @type {import('svgo').PluginConfig[]} */
-// const solidSVGOConfig = [
-// 	{ removeDimensions: true },
-// 	{ sortAttrs: true },
-// 	{ removeAttrs: { attrs: "fill" } },
-// 	{ addAttributesToSVGElement: { attribute: { fill: "currentColor" } } },
-// ];
-const solidSVGOConfig = [];
+// https://github.com/svg/svgo
+const solidSVGOConfig = [
+	{
+		name: "removeDimensions",
+		active: true,
+	},
+	{
+		name: "sortAttrs",
+		active: true,
+	},
+	{
+		name: "removeAttrs",
+		params: {
+			attrs: "(fill)",
+		},
+	},
+	{
+		name: "addAttributesToSVGElement",
+		params: {
+			attributes: [
+				{
+					fill: "currentColor",
+				},
+			],
+		},
+	},
+];
 
 /** @type {import('svgo').PluginConfig[]} */
-// const outlineSVGOConfig = [
-// 	{ removeDimensions: true },
-// 	{ sortAttrs: true },
-// 	{ removeAttrs: { attrs: "stroke" } },
-// 	{ addAttributesToSVGElement: { attribute: { stroke: "currentColor" } } },
-// ];
-const outlineSVGOConfig = [];
+const outlineSVGOConfig = [
+	{
+		name: "removeDimensions",
+		active: true,
+	},
+	{
+		name: "sortAttrs",
+		active: true,
+	},
+	{
+		name: "removeAttrs",
+		params: {
+			attrs: "(stroke)",
+		},
+	},
+	{
+		name: "addAttributesToSVGElement",
+		params: {
+			attributes: [
+				{
+					stroke: "currentColor",
+				},
+			],
+		},
+	},
+];
 
 /** @type {import('@figma-export/types').FigmaExportRC} */
 module.exports = {

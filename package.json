@@ -8,8 +8,9 @@
 		"export": "figma-export use-config figma.config.js",
 		"pack": "npm pack",
 		"clean": "rimraf outline solid package *.tgz",
-		"build": "run-s clean export",
-		"np": "np"
+		"build": "npm run-s clean export",
+		"np": "np",
+		"release": "npm run-s build np"
 	},
 	"repository": {
 		"type": "git",
@@ -39,5 +40,8 @@
 	"files": [
 		"outline/",
 		"solid/"
-	]
+	],
+	"dependencies": {
+		"svgo": "^2.8.0"
+	}
 }
